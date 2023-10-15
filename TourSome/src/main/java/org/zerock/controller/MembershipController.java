@@ -26,14 +26,24 @@ public class MembershipController {
 
 	private MembershipService service;
 	
-	@RequestMapping("/membership/login_test")
+	@RequestMapping("/membership/main")
+	public String main() {
+		return "/membership/main";
+	}
+	
+	@RequestMapping("/membership/login")
 	public String login() {
-		return "/membership/login_test";
+		return "/membership/login";
 	}
 	
 	@RequestMapping("/membership/register")
 	public String register() {
 		return "/membership/register";
+	}
+	
+	@RequestMapping("/membership/forgot-id")
+	public String forgot_id() {
+		return "/membership/forgot-id";
 	}
 	
 	@RequestMapping("/membership/forgot-password")
@@ -106,12 +116,18 @@ public class MembershipController {
 		log.info("Id 조회 처리");
 		model.addAttribute("result", service.findPassword(id, email));
 	}
-
+	@PostMapping("/login_check")
+	public void login_check(@RequestParam("id") String id, @RequestParam("password") String password, Model model) {
+		log.info("로그인 처리");
+		
+		model.addAttribute("login", service.login_read(id, password));	
+	}
 	
-	@PostMapping({"/login", "/main"})
+	@RequestMapping("/")
+	@PostMapping("/main")
 	public void login(@RequestParam("id") String id, @RequestParam("password") String password, Model model) {
 		log.info("로그인 처리");
-		model.addAttribute("login", service.login(id, password));
+		
+		model.addAttribute("login", service.login_read(id, password));	
 	}
-
 }

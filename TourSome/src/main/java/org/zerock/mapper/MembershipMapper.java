@@ -13,6 +13,8 @@ public interface MembershipMapper {
 	
 	public MembershipVO read(String id);
 	
+	public MembershipVO login_read(@Param("id") String id, @Param("password") String password);
+	
 	public int update(MembershipVO membership);
 	
 	public boolean remove(String id);

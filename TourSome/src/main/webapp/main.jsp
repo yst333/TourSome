@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%
+	String user = request.getParameter("name");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -10,18 +13,22 @@
 <title>Document</title>
 </head>
 <body>
-	<c:if test="${login.id != null}">
-		<c:out value="${login.id}" />님 환영합니다!		
-		<form action="/" method="post" role="form" id="actionForm">
-			<input type="submit" value="로그아웃">
-		</form>
-	</c:if>
-	<c:if test="${login.id == null}">
-		<form action="/membership/register">
-			<input type="submit" value="로그인">
-		</form>
-	</c:if>
-
+	<%
+		if(user != null){
+	%>
+	<%=user %>님 환영합니다!
+	<input type="button" value="로그아웃">
+	<%
+		} else{
+	%>
+	<form action="/membership/login">
+		<input type="submit" value="로그인">
+	</form>
+	<%
+		}
+	%>
+	
+	
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">

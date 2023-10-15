@@ -96,7 +96,7 @@
 									</div>
                                 </div>
                                 <div class="form-group">
-	                                <a href="/membership/login_test" class="btn btn-primary btn-user btn-block register_btn">회원가입 </a>
+	                                <a href="/membership/login" class="btn btn-primary btn-user btn-block register_btn">회원가입 </a>
 	                                <hr>
                                 </div>
                                 <!-- 
@@ -113,7 +113,7 @@
                                 <a class="small" href="/membership/forgot-password">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="/membership/login_test">Already have an account? Login!</a>
+                                <a class="small" href="/membership/login">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>
@@ -140,17 +140,27 @@
     		var actionForm = $(".user");
         	var password = actionForm.find("input[name='password']").val();
         	var password_repeat = actionForm.find("input[name='password_repeat']").val();
+        	var register = true;
     		e.preventDefault();
-    			console.log(password);
-    			console.log(password_repeat);
-    			
-    		if (password == password_repeat) {
-    			actionForm.find("input[name='password_reqeat']").remove();
-    			actionForm.submit();
-    		}else if(password != password_repeat){
-    			alert("비밀번호가 확인해주세요!");
-    			return false;
-    		}
+	    		
+	    		actionForm.find("input").each(function(index, item) {
+	    			if ($(this).val().trim() == '' || $(this).val().trim() == null) {
+						alert($(this).attr("name") + " 항목을 입력하세요!");
+						register = false;
+						return false;
+					}
+	    		});
+	    		
+    			if (register == true) {
+    				if (password == password_repeat) {
+    	    			actionForm.find("input[name='password_reqeat']").remove();
+    	    			actionForm.submit();
+    	    		} else if(password != password_repeat){
+    	    			alert("비밀번호가 같지 않습니다!");
+    	    			return false;
+    	    		}	
+				}
+    		
     	});
     	
     });

@@ -59,4 +59,10 @@ public class MembershipServiceImpl implements MembershipService {
 		return mapper.login(id, password);
 	}
 
+	@Override
+	public MembershipVO login_read(String id, String password) {
+		log.info("아이디 비번을 확인합니다!");
+		return mapper.login_read(id, password);
+	}
+
 }
