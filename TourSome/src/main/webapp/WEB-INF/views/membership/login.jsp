@@ -46,17 +46,17 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">로그인</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Login</h1>
                                     </div>
                                     <form class="user" method="post" role="form" action="/membership/login_check">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp" name="id"
-                                                placeholder="아이디">
+                                                placeholder="ID">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" name="password"
-                                                id="exampleInputPassword" placeholder="비밀번호">
+                                                id="exampleInputPassword" placeholder="Password">
                                         </div>
                                         <!-- 
                                         <div class="form-group">
@@ -66,7 +66,7 @@
                                             </div>
                                         </div>
                                         -->
-                                        <a href="/" class="btn btn-primary btn-user btn-block login_btn">로그인</a>
+                                        <a href="/" class="btn btn-primary btn-user btn-block login_btn">Sing In</a>
                                         <hr>
                                         <!-- 
                                         <a href="index.jsp" class="btn btn-google btn-user btn-block">
@@ -79,8 +79,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                    	<a class="small" href="/membership/forgot-id">아이디 찾기</a> / 
-                                        <a class="small" href="/membership/forgot-password">비밀번호 찾기</a>
+                                    	<a class="small" href="/membership/forgot-id">Forgot Id?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="/membership/forgot-password">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="/membership/register">Create an Account!</a>
@@ -112,8 +114,17 @@
     	var actionForm = $(".user");
     	$(".login_btn").on("click",function(e){
     		e.preventDefault();
+	    	if (actionForm.find("input[name='id']").val() == '') {
+				alert("ID를 입력하세요!");
+				return false;
+			} else if(actionForm.find("input[name='password']").val() == ''){
+				alert("Password를 입력하세요!");
+				return false;
+			};
+			
     		actionForm.submit();
     	});
+    	
     </script>
 </body>
 

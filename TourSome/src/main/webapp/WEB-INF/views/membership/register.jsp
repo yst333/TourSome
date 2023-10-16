@@ -36,67 +36,67 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">회원가입</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Sign Up</h1>
                             </div>
                             <form class="user" action="/membership/register1" method="post" role="form">
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="id" name="id"
-                                        placeholder="아이디">
+                                        placeholder="Id">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="password" name="password" placeholder="비밀번호">
+                                            id="password" name="password" placeholder="password">
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="password_repeat" name="password_repeat" placeholder="비밀번호 확인">
+                                            id="password_repeat" name="password_repeat" placeholder="Password check">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="email" name="email"
-                                        placeholder="이메일">
+                                        placeholder="E-mail">
                                 </div>
                                 <div class="form-group row">
 	                                <div class="col-sm-6 mb-3 mb-sm-0">
 	                                    <input type="text" class="form-control form-control-user" id="name" name="name"
-	                                        placeholder="이름">
+	                                        placeholder="Name">
 	                                </div>
 	                                <div class="col-sm-6 mb-3 mb-sm-0">
 	                                    <input type="text" class="form-control form-control-user" id="p_num" name="p_num"
-	                                        placeholder="핸드폰 번호">
+	                                        placeholder="Moblie">
 	                                </div>
                                 </div>
                                 <div class="form-group">
 	                                <div class="col-sm-6 mb-3 mb-sm-0">
-									    <input type="button" class = "btn btn-secondary btn-user" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" required class="button_add" ><br><br>
+									    <input type="button" class = "btn btn-secondary btn-user" onclick="sample6_execDaumPostcode()" value="Find Address" required class="button_add" ><br><br>
 									</div>
 									<div class="col-sm-6 mb-3 mb-sm-0">
 						                <input type="hidden" id="address1"  name="address1" style="width: 250px;" required>
-									    <input type="text" class="bar2 form-control form-control-user" id="address2" name="address2" placeholder="주소" style="width: 410px;" required><br>
+									    <input type="text" class="bar2 form-control form-control-user" id="address2" name="address2" placeholder="Address" style="width: 410px;" required><br>
 									</div>
 									<div class="col-sm-6 mb-3 mb-sm-3">
-									    <input type="text" class="bar2 form-control form-control-user" id="address3" name="address3" placeholder="상세주소" style="width: 410px;" required>
+									    <input type="text" class="bar2 form-control form-control-user" id="address3" name="address3" placeholder="Address Detail" style="width: 410px;" required>
 									    <input class="extraAddress" type="hidden" id="address4" name="address4" placeholder="참고항목" size="0">
 									</div>
 									<div class="form-group row">
-										<div class="col-sm-12 mb-3 mb-sm-0">성별
+										<div class="col-sm-12 mb-3 mb-sm-0">Gender
 										</div>
 										<div class="col-sm-3 mb-8 mb-sm-0" style="padding-left: 30px; padding-top: 1em;">
 											<input class="form-check-input" type="radio" name="gender" value="M">
-											<label class="form-check-label" for="flexRadioDisabled">남자</label>
+											<label class="form-check-label" for="flexRadioDisabled">Man</label>
 										</div>
 										<div class="col-sm-3 mb-3 mb-sm-0" style="padding-left: 30px; padding-top: 1em;">
 										    <input class="form-check-input" type="radio" name="gender" value="F">
-										    <label class="form-check-label" for="flexRadioDisabled">여자</label> 
+										    <label class="form-check-label" for="flexRadioDisabled">Women</label> 
 									    </div>
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input class="form-control form-control-user" type="number" name="age" placeholder="나이">
+											<input class="form-control form-control-user" type="number" name="age" placeholder="Age">
 										</div>
 									</div>
                                 </div>
                                 <div class="form-group">
-	                                <a href="/membership/login" class="btn btn-primary btn-user btn-block register_btn">회원가입 </a>
+	                                <a href="/membership/login" class="btn btn-primary btn-user btn-block register_btn">Create Account </a>
 	                                <hr>
                                 </div>
                                 <!-- 

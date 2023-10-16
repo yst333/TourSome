@@ -17,7 +17,7 @@
 	회원가입이 완료되었습니다!
 </c:if>
 -->
-	<form action="/membership/register" id="actionForm" method="post">
+	<form action="/membership/register" id="actionForm">
 		<input type="hidden" id="result" value="${result}" name="result">
 	</form>
 
@@ -29,7 +29,7 @@
 		var result = actionForm.find("input[name='result']").val();
 		if (result == 'success') {
 			alert("회원가입이 완료되었습니다!")
-			actionForm.attr("action", "/membership/login_test");
+			actionForm.attr("action", "/membership/login");
 			actionForm.find("#result").remove();
 			actionForm.submit();
 		} else{

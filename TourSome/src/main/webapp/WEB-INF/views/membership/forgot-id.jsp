@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 
@@ -21,7 +21,11 @@
 
     <!-- Custom styles for this template-->
     <link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">
-
+	<style>
+	    .mt-5, .my-5 {
+	    	margin-top: 15rem!important;
+		}
+    </style>
 </head>
 
 <body class="bg-gradient-primary">
@@ -41,18 +45,23 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
+                                        <h1 class="h4 text-gray-900 mb-2">Forgot Your Id?</h1>
                                         <p class="mb-4">We get it, stuff happens. Just enter your email address below
                                             and we'll send you a link to reset your password!</p>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="get" action="/membership/find_id">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="IdHelp" name="name"
+                                                placeholder="Enter Name...">
+                                        </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                id="exampleInputEmail" aria-describedby="emailHelp" name="email"
                                                 placeholder="Enter Email Address...">
                                         </div>
-                                        <a href="/membership/login" class="btn btn-primary btn-user btn-block">
-                                            Reset Password
+                                        <a href="/membership/find_id" class="btn btn-primary btn-user btn-block find_btn">
+                                            Find Id
                                         </a>
                                     </form>
                                     <hr>
@@ -83,6 +92,20 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/resources/js/sb-admin-2.min.js"></script>
+    <script type="text/javascript">
+    	$(".find_btn").on("click",function(e){
+    		e.preventDefault();
+    		var actionForm = $(".user");
+    		if (actionForm.find("input[name='name']").val() == '') {
+				alert("Name을 입력하세요!");
+				return false;
+			} else if(actionForm.find("input[name='email']").val() == ''){
+				alert("Email을 입력하세요!");
+				return false;
+			};
+    		actionForm.submit();
+    	});
+    </script>
 
 </body>
 

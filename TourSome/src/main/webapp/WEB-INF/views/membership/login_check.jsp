@@ -8,10 +8,10 @@
 <title>Document</title>
 </head>
 <body>
-	<form action="/main.jsp" method="post" role="form" id="actionForm">
-		<input id="id" type="hidden" value="${login.id}" name="name">
-		<input id="password" type="hidden" value="${login.password}" name="password">
-		<input id="name" type="hidden" value="${login.name}" name="name">
+	<form action="/membership/login" method="post" role="form" id="actionForm">
+		<input id="id" type="hidden" value="${check.id}" name="id">
+		<input id="password" type="hidden" value="${check.password}" name="password">
+		<input id="name" type="hidden" value="${check.name}" name="name">
 	</form>
 	
 </body>
@@ -25,12 +25,15 @@
 	console.log(password);
 	if (id != '' && password != '') {
 		alert(name+ "님 환영합니다!");
+		actionForm.find("input[name='name']").remove();
 		actionForm.submit();
 	} else{
 		alert("아이디 또는 비밀번호가 틀렸습니다!");
-		actionForm.find("input").remove();
-		actionForm.attr("action","/membership/login");
-		actionForm.submit();
+			actionForm.find("input").remove();
+			
+			actionForm.attr("method","get");
+			actionForm.attr("action","/membership/login");
+			actionForm.submit();
 	}
 	</script>
 </html>

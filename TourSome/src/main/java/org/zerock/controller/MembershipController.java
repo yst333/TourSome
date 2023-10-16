@@ -1,5 +1,8 @@
 package org.zerock.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -36,6 +39,11 @@ public class MembershipController {
 		return "/membership/login";
 	}
 	
+	@RequestMapping("/membership/modify")
+	public String modify() {
+		return "/membership/modify";
+	}
+	
 	@RequestMapping("/membership/register")
 	public String register() {
 		return "/membership/register";
@@ -55,20 +63,14 @@ public class MembershipController {
 	public void register1(MembershipVO membership, Model model) {
 		log.info("register(등록) : " + membership);
 
-		membership.address(); // address 메서드 호출
+		membership.address();
 
 		model.addAttribute("member_true", membership);
+		
+		log.info(membership.getId());
 
 		MembershipVO f_member = service.read(membership.getId());
 
-//        model.addAttribute("id", member.getId());
-//        model.addAttribute("password", member.getPassword());
-//        model.addAttribute("email", member.getEmail());
-//        model.addAttribute("name", member.getName());
-//        model.addAttribute("p_num",member.getP_num());
-//        model.addAttribute("address", member.getAddress());
-//        model.addAttribute("gender", member.getGender());
-//        model.addAttribute("age", member.getAge());
 		model.addAttribute("member_false", f_member);
 
 		// return "redirect:/index.jsp"; // 등록이 완료된 후 이동할 페이지
@@ -76,33 +78,26 @@ public class MembershipController {
 
 	@PostMapping("/register2")
 	public void register2(MembershipVO membership, Model model) {
-		log.info("register(등록) : " + membership);
-
-		membership.address(); // address 메서드 호출
-
+		log.info("register(등록2) : " + membership);
+		
 		service.register(membership);
 		model.addAttribute("result", "success");
 
 		// return "redirect:/index.jsp"; // 등록이 완료된 후 이동할 페이지
 	}
 
-//	@GetMapping("/modify")
-//	public void modify() {
-//		
-//	}
-
-	@GetMapping("/modify")
-	public void modify(MembershipVO membership, Model model) {
+	
+	@PostMapping("/modify")
+	public String modify(MembershipVO membership, Model model, HttpServletRequest request) {
 		log.info("데이터 수정을 실행합니다!");
-		model.addAttribute("result", service.modify(membership));
-	};
-
-	@GetMapping("/remove")
-	public void remove(@RequestParam("id") String id, Model model) {
-		log.info("회원탈퇴 처리!");
-		if (service.remove(id)) {
-			model.addAttribute("result", "success");
-		}
+		membership.address();
+		log.info("수정데이터 : " + membership);
+		HttpSession session = request.getSession();
+		service.modify(membership);
+		log.info(membership);
+		session.setAttribute("session", membership);
+		
+		return "redirect:/membership/modify";
 	}
 
 	@GetMapping("/find_id")
@@ -116,18 +111,47 @@ public class MembershipController {
 		log.info("Id 조회 처리");
 		model.addAttribute("result", service.findPassword(id, email));
 	}
-	@PostMapping("/login_check")
-	public void login_check(@RequestParam("id") String id, @RequestParam("password") String password, Model model) {
+	
+	@PostMapping("/login")
+	public String login(@RequestParam("id") String id, @RequestParam("password") String password, HttpServletRequest request) {
 		log.info("로그인 처리");
-		
-		model.addAttribute("login", service.login_read(id, password));	
+		MembershipVO vo = service.login_read(id, password);
+		log.info(vo);
+		if (vo != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("session", vo);
+			// session.setMaxInactiveInterval(10);
+		}
+		return "redirect:/main.jsp";
 	}
 	
-	@RequestMapping("/")
-	@PostMapping("/main")
-	public void login(@RequestParam("id") String id, @RequestParam("password") String password, Model model) {
-		log.info("로그인 처리");
-		
-		model.addAttribute("login", service.login_read(id, password));	
+	@PostMapping("/login_check")
+	public void login_check(@RequestParam("id") String id, @RequestParam("password") String password, Model model) {
+		log.info("로그인 체크");
+		MembershipVO vo = service.login_read(id, password);
+		log.info(vo);
+		model.addAttribute("check",vo);
 	}
+	
+	@PostMapping("/logout")
+	public String logout(HttpServletRequest request) {
+	    // 새로 생성하지 않는 조건(false)로 세션을 조회한다
+	    HttpSession session = request.getSession(false);
+	    if (session != null) {
+	        session.invalidate(); // 세션 정보를 삭제한다
+	    }
+	    return "redirect:/main.jsp";
+	}
+	
+	@PostMapping("/remove_account")
+	public String remove_acount(@RequestParam("id") String id, HttpServletRequest request) {
+	    // 새로 생성하지 않는 조건(false)로 세션을 조회한다
+	    HttpSession session = request.getSession(false);
+	    if (session != null) {
+	        session.invalidate(); // 세션 정보를 삭제한다
+	        service.remove(id);
+	    }
+	    return "redirect:/membership/login";
+	}
+	
 }
