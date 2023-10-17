@@ -23,18 +23,18 @@
 
     <!-- Custom styles for this template-->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/resources/css/sb-admin-2.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
-
+<iframe class="movie" src="https://player.vimeo.com/video/107469289?h=8898299ee0&controls=0&autoplay=1&muted=1&loop=1&autopause=0&transparent=0#t=20s" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-5 d-none d-lg-block bg-modify-image"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">

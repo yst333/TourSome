@@ -20,7 +20,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/resources/css/sb-admin-2.css" rel="stylesheet">
 	<style>
 	    .mt-5, .my-5 {
 	    	margin-top: 15rem!important;
@@ -29,7 +29,7 @@
 </head>
 
 <body class="bg-gradient-primary">
-
+<iframe class="movie" src="https://player.vimeo.com/video/307474784?h=1de4894024&controls=0&autoplay=1&muted=1&loop=1&autopause=0&transparent=0" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     <div class="container">
 
         <!-- Outer Row -->

@@ -587,6 +587,7 @@ pre code {
   flex-wrap: wrap;
   margin-right: -0.75rem;
   margin-left: -0.75rem;
+  opacity: 0.9;
 }
 
 .no-gutters {
@@ -9899,10 +9900,21 @@ a:focus {
   animation-timing-function: opacity cubic-bezier(0, 1, 0.4, 1);
 }
 
+.movie{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+}
+
 .bg-gradient-primary {
-  background-color: #4e73df;
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background-position: center;
   background-size: cover;
+  /*background-color: #4e73df;
+  background: url(/resources/images/Philippines1-1.jpg);
+  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);*/
 }
 
 .bg-gradient-secondary {
@@ -10861,19 +10873,31 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
+  background: url(/resources/images/Philippines1.jpg);
   background-position: center;
   background-size: cover;
 }
 
 .bg-register-image {
-  background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+  background: url(/resources/images/winter.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-modify-image {
+  background: url(/resources/images/winter.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-id-image {
+  background: url(/resources/images/Swiss2.jpg);
   background-position: center;
   background-size: cover;
 }
 
 .bg-password-image {
-  background: url("https://source.unsplash.com/oWTW-jNGl9I/600x800");
+  background: url(/resources/images/Bolivia.jpg);
   background-position: center;
   background-size: cover;
 }

@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>SB Admin 2 - Register</title>
 
     <!-- Custom fonts for this template-->
@@ -21,11 +20,11 @@
 
     <!-- Custom styles for this template-->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/resources/css/sb-admin-2.css" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-primary">
-
+	<iframe class="movie" src="https://player.vimeo.com/video/206713775?h=07741a2051&controls=0&autoplay=1&muted=1&loop=1&autopause=0&transparent=0#t=3s" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
