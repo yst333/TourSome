@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.zerock.mapper.MembershipMapper">
+
+	<insert id="register">
+		insert into membership values (#{id},#{password},#{email},#{name},#{p_num}, #{address}, #{gender}, #{age})
+	</insert>
+	
+	<update id="update">
+      UPDATE membership set password = #{password}, email = #{email}, address = #{address}, name = #{name}, gender = #{gender}, age = #{age}, p_num = #{p_num} where id = #{id}
+	</update>
+
+	<select id="read" resultType="org.zerock.domain.MembershipVO">
+		SELECT * from membership where id = #{id}
+	</select>
+	
+	<select id="login_read" resultType="org.zerock.domain.MembershipVO">
+		SELECT * from membership where id = #{id} and password = #{password}
+	</select>
+	
+	<delete id="remove">
+		delete from membership where id = #{id}
+	</delete>
+	
+	<select id="findId" resultType="org.zerock.domain.MembershipVO">
+		select * from membership where name = #{name} and email = #{email}
+	</select>
+	
+	<select id="findPassword" resultType="org.zerock.domain.MembershipVO">
+		select * from membership where id = #{id} and email = #{email}
+	</select>
+	
+	<select id="login" resultType="org.zerock.domain.MembershipVO">
+		select * from membership where id = #{id} and password = #{password}
+	</select>
+	
+	
+</mapper>
