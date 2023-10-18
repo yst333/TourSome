@@ -10873,31 +10873,31 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url(/resources/images/Philippines1.jpg);
+  background: url(/resources/image/Philippines1.jpg);
   background-position: center;
   background-size: cover;
 }
 
 .bg-register-image {
-  background: url(/resources/images/winter.jpg);
+  background: url(/resources/image/winter.jpg);
   background-position: center;
   background-size: cover;
 }
 
 .bg-modify-image {
-  background: url(/resources/images/winter.jpg);
+  background: url(/resources/image/Argentina4.jpg);
   background-position: center;
   background-size: cover;
 }
 
 .bg-id-image {
-  background: url(/resources/images/Swiss2.jpg);
+  background: url(/resources/image/Swiss2.jpg);
   background-position: center;
   background-size: cover;
 }
 
 .bg-password-image {
-  background: url(/resources/images/Bolivia.jpg);
+  background: url(/resources/image/Bolivia.jpg);
   background-position: center;
   background-size: cover;
 }

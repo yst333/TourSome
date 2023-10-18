@@ -19,7 +19,7 @@ public class MembershipVO {
     private int age; // 나이
 
     public void address() {
-        this.address = this.address1 + " " + this.address2 + " " + this.address3 + " " +  this.address4;
+        this.address = this.address2 + " " + this.address3;
     }
 
 }

@@ -34,7 +34,7 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-modify-image"></div>
+                    <a href="/main.jsp" class="col-lg-5 d-none d-lg-block bg-modify-image"></a>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
@@ -144,6 +144,9 @@
 	    		
 	    		actionForm.find("input").each(function(index, item) {
 	    			if ($(this).val().trim() == '' || $(this).val().trim() == null) {
+	    				if($(this).attr("name") == 'address1' || $(this).attr("name") == 'address4'){
+	    					return;
+	    				}
 						alert($(this).attr("name") + " 항목을 입력하세요!");
 						register = false;
 						return false;
