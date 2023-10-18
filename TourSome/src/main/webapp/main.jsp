@@ -64,7 +64,7 @@
 						class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
 						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
 							<li class="active"><a>Free Board</a></li>
-							<li><a>Community</a></li>
+							<li><a href="/board/list">Community</a></li>
 							<li><a>Q&AMP;A</a></li>
 
 						</ul>
@@ -72,7 +72,7 @@
 					<div class="col-6 col-lg-3 text-lg-end">
 						<ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
 							<c:if test="${session.name != null}">
-								<li class="cta-button" style="margin-top:-28px; padding:5px; font-size: 20px;">
+								<li class="cta-button" style="margin-top:-28px; padding:5px; font-size: 15px;font-family: 'ghanachoco';">
 									<c:out value="${session.name}" /> Welcome!
 									<form class="btn_resize" action="/membership/logout" method="post" role="form" style=" margin-bottom: 10px;">
 										<input class="main_btn logout" class="logout" type="submit" value="Logout">

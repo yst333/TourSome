@@ -13,6 +13,13 @@
 </head>
 <body>
 
+	
+	<form action="/board/list" method="get">
+		
+		<input type="submit" value="SpringMVC 게시판 Go! Go!!">
+	
+	</form>
+
 	<h2>로그인</h2>
 	<form action="/membership/login" method="post" role="form">
 		아이디 : <input type="text" name="id">

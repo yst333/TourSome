@@ -9345,11 +9345,14 @@ textarea {
   position: absolute;
   top: 0;
   z-index: 9;
-  width: 100%; }
+  width: 100%;
+   }
 
 .site-nav {
   padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  background-color: black;
+   }
 
   .site-nav h1, .site-nav .h1 {
     margin: 0;
@@ -9374,6 +9377,8 @@ textarea {
         background: #edafb8;
         border: 2px solid #edafb8 ;
         color: #333;
+        font-family: 'ghanachoco';
+        font-size: 15px;
       }
       .site-nav .site-navigation .site-menu > li.cta-button1 a{
         padding: 6	px 20px;
