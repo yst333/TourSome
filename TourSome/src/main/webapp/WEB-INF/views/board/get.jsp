@@ -71,7 +71,10 @@
            <div class="panel panel-default">
               <div class="panel-heading">
                  <i class="fa fa-comments fa-fw"></i> Reply (댓글)
-                 <button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">New Reply(댓글 등록)</button>
+                 <c:if test="${session.id != null}">
+                 	<button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">New Reply(댓글 등록)</button>
+                 </c:if>
+                 
               </div>
               <div class="panel-body">
                     <!-- 댓글의 목록은 ul 태그 내에 li 태그를 이용해서 처리합니다.
